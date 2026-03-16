@@ -89,9 +89,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 		}
 	}
 
-	// save_api.sanitize_inventories(index);
 	save_api.write_to_path("./deduped.co2")?;
-
 	SaveApi::from_path("./deduped.co2")?;
 			
 	Ok(())
