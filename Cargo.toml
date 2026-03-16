@@ -1,0 +1,12 @@
+[package]
+name = "shizoring"
+version = "0.1.0"
+edition = "2024"
+
+[workspace]
+members = ["er-save-lib"]
+
+[dependencies]
+console = "0.16.3"
+dialoguer = "0.12.0"
+er-save-lib = { path = "er-save-lib" }

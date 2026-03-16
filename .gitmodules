@@ -1,0 +1,3 @@
+[submodule "er-save-lib"]
+	path = er-save-lib
+	url = https://github.com/ClayAmore/ER-Save-Lib.git
