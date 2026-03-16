@@ -79,13 +79,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 			};
 			
 			print!("Duplicate item: {} ({}) (ID: {})", item.item_name, category, item.item_id);
-			if save_api.is_equipped_item_id(0, &item) {
+			if save_api.is_equipped_item_id(index, &item) {
 
 				let not_equipped: Vec<_> = seen[&item.item_id].iter().cloned()
-					.filter(|i| !save_api.is_equipped(0, i)).collect();
+					.filter(|i| !save_api.is_equipped(index, i)).collect();
 
 				for i in not_equipped.iter() {
-					save_api.remove_item(0, StorageType::Held, StorageItemType::Regular, &i);
+					save_api.remove_item(index, StorageType::Held, StorageItemType::Regular, &i);
 					seen.get_mut(&item.item_id).unwrap().remove(&i);
 				}
 				if not_equipped.is_empty() {
